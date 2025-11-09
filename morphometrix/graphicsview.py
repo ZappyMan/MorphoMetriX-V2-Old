@@ -62,6 +62,7 @@ class imwin(QGraphicsView):
         self.pixmap = None
         self.scene.clear()
 
+        QtGui.QImageReader.setAllocationLimit(0) # Remove image size limit
         self.pixmap = QtGui.QPixmap(image_path)
         self.scene.addPixmap(self.pixmap)
         self.setSceneRect(QtCore.QRectF(0.0, 0.0, self.pixmap.width(), self.pixmap.height()))   # Set Scenerect to size of pixmap
